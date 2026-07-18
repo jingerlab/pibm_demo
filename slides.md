@@ -110,8 +110,9 @@ id: 3
 
 ---
 id: 4
-layout: tow-cols-header
+layout: two-cols-header
 ---
+
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
 # <span class="pt-12 block">04. Machine Learning Approaches</span>
 
