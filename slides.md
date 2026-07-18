@@ -114,7 +114,7 @@ layout: two-cols-header
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
-# <span class="pt-12 block">04. Machine Learning Approaches</span>
+# <span class="pt-8 block">04. Machine Learning Approaches</span>
 
 ::left::
 <div class="bg-gray-800/30 p-8 rounded-xl border border-gray-700/50 flex flex-col items-center text-center mx-4">
@@ -139,6 +139,97 @@ layout: two-cols-header
     The model acts as an exploratory lens, mapping unlabeled feature spaces to discover natural clusters organically.
   </p>
 </div>
+
+---
+layout: default
+id: 5
+---
+
+# <span class="pt-12 block">05. Centroid-Based Partitioning: K-Means</span>
+
+<div class="grid grid-cols-2 gap-4 items-center min-h-[55vh] mt-4">
+
+  <!-- Left: Explanatory Context -->
+  <div class="space-y-4 px-4">
+    <h3 class="text-xl font-semibold text-emerald-400">The Iterative Mechanics</h3>
+    <p class="text-gray-300 text-sm leading-relaxed">
+      K-Means seeks to partition $N$ observations into $K$ clusters where each point belongs to the cluster with the nearest mean.
+    </p>
+    <div class="bg-gray-800/50 p-4 rounded border border-gray-700/60 font-mono text-xs text-gray-400">
+      <span class="text-emerald-400 block font-bold mb-1">&rarr; Step 1: Random Centroid Initialization</span>
+      <span v-click class="text-blue-400 block font-bold">&rarr; Step 2: Continuous Mean Re-calculation</span>
+    </div>
+  </div>
+
+  <!-- Right: Dynamic Plotly Figures controlled by Slidev clicks -->
+  <div class="relative w-full flex justify-center items-center bg-gray-900/40 border border-gray-800 rounded-xl p-2 shadow-lg">
+    
+    <!-- Initial State: Step 1 Load -->
+    <div v-if="$slidev.nav.clicks === 0" class="w-full">
+      <PlotlyFigure
+        src="/charts/kmeans_step_1.json"
+        caption="Iterative Phase: Initial Random Assignment"
+        width="100%"
+        height="320px"
+        :fontSize="12"
+      />
+    </div>
+
+    <!-- Click State: Step 2 Convergence Load -->
+    <div v-else class="w-full">
+      <PlotlyFigure
+        src="/charts/kmeans_step_2.json"
+        caption="Iterative Phase: Stable Convergence Reached"
+        width="100%"
+        height="320px"
+        :fontSize="12"
+      />
+    </div>
+
+  </div>
+</div>
+
+---
+layout: default
+id: 6
+---
+
+# <span class="pt-12 block">06. K-Means: Structural Properties</span>
+
+<div class="flex flex-col justify-center items-center min-h-[55vh] px-8">
+  <div class="grid grid-cols-3 gap-6 w-full max-w-5xl text-center">
+
+    <!-- Property 1 -->
+    <div class="bg-gray-800/30 p-6 rounded-xl border border-gray-700/50 flex flex-col items-center">
+      <div class="text-4xl mb-4 select-none">📐</div>
+      <h3 class="text-lg font-bold text-emerald-400 mb-2">Geometric Assumptions</h3>
+      <p class="text-gray-400 text-xs leading-relaxed">
+        Inherently assumes clusters are spherical, isotropic, and share similar variances. Struggles immensely with irregular, elongated geometries.
+      </p>
+    </div>
+
+    <!-- Property 2 -->
+    <div class="bg-gray-800/30 p-6 rounded-xl border border-gray-700/50 flex flex-col items-center">
+      <div class="text-4xl mb-4 select-none">⚡</div>
+      <h3 class="text-lg font-bold text-emerald-400 mb-2">Computational Speed</h3>
+      <p class="text-gray-400 text-xs leading-relaxed">
+        Highly scalable with linear time complexity $O(I \cdot K \cdot N \cdot M)$. Excellent deployment candidate for large-scale corporate data streams.
+      </p>
+    </div>
+
+    <!-- Property 3 -->
+    <div class="bg-gray-800/30 p-6 rounded-xl border border-gray-700/50 flex flex-col items-center">
+      <div class="text-4xl mb-4 select-none">⚠️</div>
+      <h3 class="text-lg font-bold text-emerald-400 mb-2">Critical Pitfalls</h3>
+      <p class="text-gray-400 text-xs leading-relaxed">
+        Extremely sensitive to outlier distortions and random seed initialization states. Requires defining the hyperparameter $K$ explicitly beforehand.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
 
 ---
 layout: center
