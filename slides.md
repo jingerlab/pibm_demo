@@ -36,43 +36,18 @@ id: 2
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
-## 02. The Business Problem
+# <span class="pt-12 block">02. The Business Problem</span>
 
-<div class="flex flex-col justify-center items-center min-h-[70vh] px-8">
-  
-  <!-- The Core Question to Ponder -->
-  <h2 class="text-3xl font-semibold text-center text-emerald-400 mb-12">
-    "How do we target different customers more efficiently?"
-  </h2>
+<div class="flex flex-col justify-center items-center min-h-[55vh] px-8">
 
-  <!-- Clean, Label-Driven Layout -->
-  <div class="grid grid-cols-3 gap-6 w-full">
-    
-    <div class="bg-gray-800/40 p-5 rounded-lg border border-gray-700/60 flex flex-col justify-between">
-      <div>
-        <span class="px-2 py-1 text-xs font-mono font-bold bg-emerald-500/20 text-emerald-400 rounded">STRATEGY</span>
-        <h3 class="text-lg font-bold mt-3 mb-2 text-gray-100">Micro-Segmentation</h3>
-        <p class="text-sm text-gray-400 leading-relaxed">Moving past rigid, manual rules to uncover real behavioral patterns automatically.</p>
-      </div>
-    </div>
-
-    <div class="bg-gray-800/40 p-5 rounded-lg border border-gray-700/60 flex flex-col justify-between">
-      <div>
-        <span class="px-2 py-1 text-xs font-mono font-bold bg-blue-500/20 text-blue-400 rounded">RISK</span>
-        <h3 class="text-lg font-bold mt-3 mb-2 text-gray-100">Anomaly Detection</h3>
-        <p class="text-sm text-gray-400 leading-relaxed">Isolating high-risk fraud clusters that baseline averages completely hide.</p>
-      </div>
-    </div>
-
-    <div class="bg-gray-800/40 p-5 rounded-lg border border-gray-700/60 flex flex-col justify-between">
-      <div>
-        <span class="px-2 py-1 text-xs font-mono font-bold bg-purple-500/20 text-purple-400 rounded">MARGIN</span>
-        <h3 class="text-lg font-bold mt-3 mb-2 text-gray-100">Product Bundling</h3>
-        <p class="text-sm text-gray-400 leading-relaxed">Grouping inventory items based on actual customer co-purchase behaviors.</p>
-      </div>
-    </div>
-
+<v-click>
+  <div class="bg-gray-800/60 backdrop-blur-md px-12 py-8 rounded-xl border border-gray-700/80 shadow-2xl max-w-2xl text-center">
+    <h2 class="text-3xl font-semibold text-emerald-400 leading-relaxed">
+      "How do we target different customers more efficiently?"
+    </h2>
   </div>
+</v-click>
+
 </div>
 
 ---
@@ -81,7 +56,7 @@ id: 3
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
-## 03. Data Showcase
+# <span class="pt-12 block">03. Data Showcase</span>
 
 <!-- Centered and Cleanly Framed Dataset Window -->
 <div class="flex flex-col justify-center items-center min-h-[70vh] w-full px-4">
@@ -134,6 +109,43 @@ id: 3
         </tr>
       </tbody>
     </table>
+  </div>
+</div>
+
+---
+id: 4
+layout: default
+---
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+# <span class="pt-12 block">04. Machine Learning Approaches</span>
+
+<div class="flex flex-col justify-center items-center min-h-[60vh] px-8 text-center">
+  <div class="grid grid-cols-2 gap-16 w-full max-w-4xl">
+
+    <!-- Supervised Learning Column -->
+    <div class="bg-gray-800/30 p-8 rounded-xl border border-gray-700/50 flex flex-col items-center">
+      <div class="text-6xl mb-6 select-none">🏷️</div>
+      <h2 class="text-2xl font-bold text-blue-400 mb-4">Supervised</h2>
+      <div class="font-mono text-sm bg-gray-900/60 text-gray-400 p-3 rounded border border-gray-800 w-full mb-6">
+        Inputs &rarr; <span class="text-blue-400 font-bold">Known Labels</span>
+      </div>
+      <p class="text-gray-300 text-sm leading-relaxed">
+        The model learns a mapping function to predict predefined outcomes based on historical training targets.
+      </p>
+    </div>
+
+    <!-- Unsupervised Learning Column -->
+    <div class="bg-gray-800/30 p-8 rounded-xl border border-gray-700/50 flex flex-col items-center">
+      <div class="text-6xl mb-6 select-none">🔍</div>
+      <h2 class="text-2xl font-bold text-emerald-400 mb-4">Unsupervised</h2>
+      <div class="font-mono text-sm bg-gray-900/60 text-gray-400 p-3 rounded border border-gray-800 w-full mb-6">
+        Inputs &rarr; <span class="text-emerald-400 font-bold">Hidden Structures</span>
+      </div>
+      <p class="text-gray-300 text-sm leading-relaxed">
+        The model acts as an exploratory lens, mapping unlabeled feature spaces to discover natural clusters organically.
+      </p>
+    </div>
+
   </div>
 </div>
 
