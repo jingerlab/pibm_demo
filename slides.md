@@ -148,7 +148,7 @@ id: 5
 # 05. Centroid-Based Partitioning: K-Means
 
 <PlotlyFigure
-  src="kmeans.json"
+  src="plot.json"
   caption="Figure 1: Sample Figure"
   width="100%"
   height="320px"
