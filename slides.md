@@ -36,36 +36,38 @@ id: 2
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="100" baseColor="#00ffff" />
-# 02. The Business Problem
-## Why Do We Need Unsupervised Clustering?
+## 02. The Business Problem
 
-::left::
+<div class="h-full flex flex-col justify-center items-center px-8 -mt-4">
+  
+  <!-- The Core Question to Ponder -->
+  <h2 class="text-3xl font-semibold text-center text-emerald-400 my-8">
+    "How do we target different customers more efficiently?"
+  </h2>
 
-### The Core Executive Challenge
-Modern enterprises are drowning in high-dimensional data, yet starving for actionable insights. Standard analytical frameworks rely on rigid, pre-defined rules that miss hidden behavioral dynamics.
+  <!-- Clean, Label-Driven Layout -->
+  <div class="grid grid-cols-3 gap-6 w-full mt-4">
+    
+    <div class="bg-gray-800/40 p-5 rounded-lg border border-gray-700/60">
+      <span class="px-2 py-1 text-xs font-mono font-bold bg-emerald-500/20 text-emerald-400 rounded">STRATEGY</span>
+      <h3 class="text-lg font-bold mt-3 mb-2 text-gray-100">Micro-Segmentation</h3>
+      <p class="text-sm text-gray-400 leading-relaxed">Moving past rigid, manual rules to uncover real behavioral patterns automatically.</p>
+    </div>
 
-> **The Strategic Shift:** Moving from *Intuition-Driven* heuristics ("Let's target users aged 25–35") to *Data-Driven* micro-segmentation discovered directly via mathematical feature topology.
+    <div class="bg-gray-800/40 p-5 rounded-lg border border-gray-700/60">
+      <span class="px-2 py-1 text-xs font-mono font-bold bg-blue-500/20 text-blue-400 rounded">RISK</span>
+      <h3 class="text-lg font-bold mt-3 mb-2 text-gray-100">Anomaly Detection</h3>
+      <p class="text-sm text-gray-400 leading-relaxed">Isolating high-risk fraud clusters that baseline averages completely hide.</p>
+    </div>
 
-<div class="mt-6 border-l-4 border-emerald-500 pl-4">
-  <span class="text-sm font-bold text-gray-400 uppercase tracking-wider block">Core Value Proposition</span>
-  <span class="text-lg font-semibold text-emerald-400">Transforming raw transactional noise into hyper-targeted operational strategies.</span>
+    <div class="bg-gray-800/40 p-5 rounded-lg border border-gray-700/60">
+      <span class="px-2 py-1 text-xs font-mono font-bold bg-purple-500/20 text-purple-400 rounded">MARGIN</span>
+      <h3 class="text-lg font-bold mt-3 mb-2 text-gray-100">Product Bundling</h3>
+      <p class="text-sm text-gray-400 leading-relaxed">Grouping inventory items based on actual customer co-purchase behaviors.</p>
+    </div>
+
+  </div>
 </div>
-
-::right::
-
-### 3 Core Strategic Pillars
-
-*   <span class="text-emerald-400 font-bold">1. Hyper-Personalized Customer Segmentation</span>
-    *   **Problem:** One-size-fits-all marketing yields low conversion rates and burns ad spend.
-    *   **Solution:** Clustering multidimensional customer behaviors (e.g., RFM metrics) to unlock micro-personas for tailored loyalty and win-back campaigns.
-
-*   <span class="text-emerald-400 font-bold">2. Risk Management & Fraud Detection</span>
-    *   **Problem:** Fraudulent financial patterns change faster than rule-based systems can be updated.
-    *   **Solution:** Isolating anomalies and irregular behavioral clusters natively using density-based algorithms to flag high-risk transactions instantly.
-
-*   <span class="text-emerald-400 font-bold">3. Product Recommendations & Cross-Selling</span>
-    *   **Problem:** Low average order value (AOV) due to static inventory layouts.
-    *   **Solution:** Grouping products based on co-purchase histories to dynamically bundle items, optimizing both margins and supply chain allocation.
 
 
 ---
@@ -73,105 +75,60 @@ layout: default
 id: 3
 ---
 
-# 03. Data Showcase & Preprocessing Blueprint
-## Raw E-Commerce Transactional Metrics (RFM Baseline Dataset)
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="100" baseColor="#00ffff" />
+## 03. Data Showcase
 
-<div class="grid grid-cols-3 gap-4 mb-4">
-  <div class="bg-gray-800/50 p-3 rounded border border-gray-700">
-    <span class="text-xs text-gray-400 block uppercase font-mono">Dataset Scale</span>
-    <span class="text-xl font-bold text-emerald-400 font-mono">100,000+ Rows</span>
-  </div>
-  <div class="bg-gray-800/50 p-3 rounded border border-gray-700">
-    <span class="text-xs text-gray-400 block uppercase font-mono">Target Dimensions</span>
-    <span class="text-xl font-bold text-emerald-400 font-mono">3 Continuous Core Features</span>
-  </div>
-  <div class="bg-gray-800/50 p-3 rounded border border-gray-700">
-    <span class="text-xs text-gray-400 block uppercase font-mono">Preprocessing Goal</span>
-    <span class="text-xl font-bold text-emerald-400 font-mono">Z-Score Normalization</span>
-  </div>
-</div>
-
-<!-- Scrollable Table Container -->
-<div class="overflow-y-auto max-h-68 border border-gray-700 rounded shadow-inner custom-scrollbar">
-  <table class="w-full text-left text-sm border-collapse">
-    <thead class="bg-gray-800 sticky top-0 border-b border-gray-700">
+<!-- Full-width clean grid window showing attributes clearly -->
+<div class="w-full border border-gray-700/70 rounded-lg overflow-hidden bg-gray-900/40 shadow-xl mt-4">
+  <table class="w-full text-left border-collapse">
+    <thead class="bg-gray-800 border-b border-gray-700">
       <tr>
-        <th class="p-3 font-mono font-bold text-emerald-400">CustomerID</th>
-        <th class="p-3 font-mono font-bold text-emerald-400 text-right">Recency (Days)</th>
-        <th class="p-3 font-mono font-bold text-emerald-400 text-right">Frequency (Orders)</th>
-        <th class="p-3 font-mono font-bold text-emerald-400 text-right">Monetary Value ($)</th>
-        <th class="p-3 font-bold text-blue-400">Core Persona Intuition</th>
+        <th class="p-4 font-mono font-bold text-emerald-400">CustomerID</th>
+        <th class="p-4 font-mono font-bold text-emerald-400 text-right">Recency (Days)</th>
+        <th class="p-4 font-mono font-bold text-emerald-400 text-right">Frequency (Orders)</th>
+        <th class="p-4 font-mono font-bold text-emerald-400 text-right">Monetary Value ($)</th>
       </tr>
     </thead>
-    <tbody class="divide-y divide-gray-800 bg-gray-900/40">
+    <tbody class="divide-y divide-gray-800/60 text-base">
       <tr>
-        <td class="p-3 font-mono text-gray-400">#14920</td>
-        <td class="p-3 font-mono text-right text-emerald-400">3</td>
-        <td class="p-3 font-mono text-right text-emerald-400">82</td>
-        <td class="p-3 font-mono text-right text-emerald-400">14,250.00</td>
-        <td class="p-3 text-xs text-gray-300">High-value, highly active corporate client.</td>
+        <td class="p-4 font-mono text-gray-300">#14920</td>
+        <td class="p-4 font-mono text-right text-gray-100">3</td>
+        <td class="p-4 font-mono text-right text-gray-100">82</td>
+        <td class="p-4 font-mono text-right text-gray-100">14,250.00</td>
       </tr>
-      <tr class="bg-gray-800/20">
-        <td class="p-3 font-mono text-gray-400">#12844</td>
-        <td class="p-3 font-mono text-right text-emerald-400">12</td>
-        <td class="p-3 font-mono text-right text-emerald-400">4</td>
-        <td class="p-3 font-mono text-right text-emerald-400">120.50</td>
-        <td class="p-3 text-xs text-gray-300">Frequent low-tier buyer, highly responsive to sales.</td>
+      <tr class="bg-gray-800/10">
+        <td class="p-4 font-mono text-gray-300">#12844</td>
+        <td class="p-4 font-mono text-right text-gray-100">12</td>
+        <td class="p-4 font-mono text-right text-gray-100">4</td>
+        <td class="p-4 font-mono text-right text-gray-100">120.50</td>
       </tr>
       <tr>
-        <td class="p-3 font-mono text-gray-400">#17391</td>
-        <td class="p-3 font-mono text-right text-emerald-400">241</td>
-        <td class="p-3 font-mono text-right text-emerald-400">1</td>
-        <td class="p-3 font-mono text-right text-emerald-400">2,100.00</td>
-        <td class="p-3 text-xs text-gray-300">Lapsed wholesale buyer. High risk of complete churn.</td>
+        <td class="p-4 font-mono text-gray-300">#17391</td>
+        <td class="p-4 font-mono text-right text-gray-100">241</td>
+        <td class="p-4 font-mono text-right text-gray-100">1</td>
+        <td class="p-4 font-mono text-right text-gray-100">2,100.00</td>
       </tr>
-      <tr class="bg-gray-800/20">
-        <td class="p-3 font-mono text-gray-400">#15002</td>
-        <td class="p-3 font-mono text-right text-emerald-400">45</td>
-        <td class="p-3 font-mono text-right text-emerald-400">18</td>
-        <td class="p-3 font-mono text-right text-emerald-400">890.00</td>
-        <td class="p-3 text-xs text-gray-300">Standard consistent active consumer retail footprint.</td>
+      <tr class="bg-gray-800/10">
+        <td class="p-4 font-mono text-gray-300">#15002</td>
+        <td class="p-4 font-mono text-right text-gray-100">45</td>
+        <td class="p-4 font-mono text-right text-gray-100">18</td>
+        <td class="p-4 font-mono text-right text-gray-100">890.00</td>
       </tr>
       <tr>
-        <td class="p-3 font-mono text-gray-400">#16211</td>
-        <td class="p-3 font-mono text-right text-emerald-400">6</td>
-        <td class="p-3 font-mono text-right text-emerald-400">2</td>
-        <td class="p-3 font-mono text-right text-emerald-400">45.00</td>
-        <td class="p-3 text-xs text-gray-300">New acquisition. Needs tracking for secondary purchase.</td>
+        <td class="p-4 font-mono text-gray-300">#16211</td>
+        <td class="p-4 font-mono text-right text-gray-100">6</td>
+        <td class="p-4 font-mono text-right text-gray-100">2</td>
+        <td class="p-4 font-mono text-right text-gray-100">45.00</td>
       </tr>
-      <tr class="bg-gray-800/20">
-        <td class="p-3 font-mono text-gray-400">#19022</td>
-        <td class="p-3 font-mono text-right text-emerald-400">312</td>
-        <td class="p-3 font-mono text-right text-emerald-400">1</td>
-        <td class="p-3 font-mono text-right text-emerald-400">15.00</td>
-        <td class="p-3 text-xs text-gray-300">One-time bargain browser. Low priority cohort.</td>
+      <tr class="bg-gray-800/10">
+        <td class="p-4 font-mono text-gray-300">#19022</td>
+        <td class="p-4 font-mono text-right text-gray-100">312</td>
+        <td class="p-4 font-mono text-right text-gray-100">1</td>
+        <td class="p-4 font-mono text-right text-gray-100">15.00</td>
       </tr>
     </tbody>
   </table>
 </div>
-
-<span class="text-xs text-gray-500 mt-2 block italic">
-  *Note for the Expert Panel: Notice the extreme unit variance. Without logarithmic scaling or standard Z-scoring, the distance metrics will completely collapse under the magnitude of the Monetary dimension.*
-</span>
-
-<style>
-.custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
-}
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(31, 41, 55, 0.5);
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(16, 185, 129, 0.4);
-  border-radius: 3px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(16, 185, 129, 0.7);
-}
-</style>
-
-
-
 ---
 layout: center
 class: text-center
