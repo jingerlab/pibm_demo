@@ -147,37 +147,13 @@ id: 5
 
 # 05. Centroid-Based Partitioning: K-Means
 
-<div class="grid grid-cols-2 gap-8 items-center min-h-[55vh] mt-4">
-
-  <!-- Left Side: Core Narrative -->
-  <div class="space-y-4 px-4">
-    <h3 class="text-xl font-semibold text-emerald-400">The Convergence Process</h3>
-    <p class="text-gray-300 text-sm leading-relaxed">
-      K-Means relies on the Expectation-Maximization (EM) loop. It begins with a completely blind guess before optimizing cluster boundaries.
-    </p>
-    
-    <ul class="space-y-3 text-sm text-gray-400 list-disc pl-4">
-      <li><strong>Initialization Phase:</strong> Data points are completely unassigned (monochrome), and the initial centroids are placed at random locations.</li>
-      <li><strong>Optimization Phase:</strong> Points are iteratively assigned to their nearest center, and centroids shift to the true mathematical mean of their assigned points until they stabilize.</li>
-    </ul>
-    
-    <div class="mt-4 p-3 bg-gray-800/40 rounded border border-gray-700/50 text-xs text-emerald-400/80">
-      💡 **Interactive Live Demo:** Scrub through the timeline slider under the graph to demonstrate the shifting centroids to the panel in real-time.
-    </div>
-  </div>
-
-  <!-- Right Side: The Bulletproof Iframe Fallback -->
-  <div class="w-full h-[400px] bg-transparent rounded-xl overflow-hidden border border-gray-800 shadow-lg">
-    <iframe 
-      src="/charts/kmeans_interactive.html" 
-      class="w-full h-full border-none"
-      title="K-Means Interactive Animation"
-      scrolling="no"
-      loading="eager">
-    </iframe>
-  </div>
-
-</div>
+<PlotlyFigure
+  src="kmeans.json"
+  caption="Figure 1: Sample Figure"
+  width="100%"
+  height="320px"
+  :fontSize="12"
+/>
 
 ---
 layout: default
