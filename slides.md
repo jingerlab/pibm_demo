@@ -13,7 +13,6 @@ mdc: true
 comark: true
 duration: 60 mins
 addons:
-  - stem
   - window-mockup
   - fancy-arrow
 id: 1
