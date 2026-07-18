@@ -146,29 +146,14 @@ id: 5
 ---
 
 # <span class="pt-12 block">05. Centroid-Based Partitioning: K-Means</span>
+  <PlotlyFigure
+    src="/charts/kmeans.json"
+    caption="Figure 1: K-Means Convergence Path"
+    width="100%"
+    height="360px"
+    :fontSize="12"
+  />
 
-<div class="grid grid-cols-2 gap-8 items-center min-h-[55vh] mt-4">
-
-  <!-- Left Column: Simple presentation text -->
-  <div class="space-y-4 px-4">
-    <h3 class="text-xl font-semibold text-emerald-400">The Iterative Mechanics</h3>
-    <p class="text-gray-300 text-sm leading-relaxed">
-      K-Means continuously partitions data by optimizing cluster center coordinates. Use the interactive slider below the figure to watch the mathematical convergence step-by-step.
-    </p>
-  </div>
-
-  <!-- Right Column: Single clean Plotly component -->
-  <div class="w-full bg-gray-900/40 border border-gray-800 rounded-xl p-4 shadow-lg">
-    <PlotlyFigure
-      src="/charts/kmeans.json"
-      caption="Figure 1: K-Means Convergence Path"
-      width="100%"
-      height="360px"
-      :fontSize="12"
-    />
-  </div>
-
-</div>
 
 ---
 layout: default
