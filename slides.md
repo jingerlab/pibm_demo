@@ -57,96 +57,86 @@ id: 3
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
 # <span class="pt-12 block">03. Data Showcase</span>
-
-<!-- Centered and Cleanly Framed Dataset Window -->
-<div class="flex flex-col justify-center items-center min-h-[70vh] w-full px-4">
-  <div class="w-full border border-gray-700/70 rounded-lg overflow-hidden bg-gray-900/40 shadow-xl">
-    <table class="w-full text-left border-collapse">
-      <thead class="bg-gray-800 border-b border-gray-700">
-        <tr>
-          <th class="p-4 font-mono font-bold text-emerald-400">CustomerID</th>
-          <th class="p-4 font-mono font-bold text-emerald-400 text-right">Recency (Days)</th>
-          <th class="p-4 font-mono font-bold text-emerald-400 text-right">Frequency (Orders)</th>
-          <th class="p-4 font-mono font-bold text-emerald-400 text-right">Monetary Value ($)</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-800/60 text-base">
-        <tr>
-          <td class="p-4 font-mono text-gray-300">#14920</td>
-          <td class="p-4 font-mono text-right text-gray-100">3</td>
-          <td class="p-4 font-mono text-right text-gray-100">82</td>
-          <td class="p-4 font-mono text-right text-gray-100">14,250.00</td>
-        </tr>
-        <tr class="bg-gray-800/10">
-          <td class="p-4 font-mono text-gray-300">#12844</td>
-          <td class="p-4 font-mono text-right text-gray-100">12</td>
-          <td class="p-4 font-mono text-right text-gray-100">4</td>
-          <td class="p-4 font-mono text-right text-gray-100">120.50</td>
-        </tr>
-        <tr>
-          <td class="p-4 font-mono text-gray-300">#17391</td>
-          <td class="p-4 font-mono text-right text-gray-100">241</td>
-          <td class="p-4 font-mono text-right text-gray-100">1</td>
-          <td class="p-4 font-mono text-right text-gray-100">2,100.00</td>
-        </tr>
-        <tr class="bg-gray-800/10">
-          <td class="p-4 font-mono text-gray-300">#15002</td>
-          <td class="p-4 font-mono text-right text-gray-100">45</td>
-          <td class="p-4 font-mono text-right text-gray-100">18</td>
-          <td class="p-4 font-mono text-right text-gray-100">890.00</td>
-        </tr>
-        <tr>
-          <td class="p-4 font-mono text-gray-300">#16211</td>
-          <td class="p-4 font-mono text-right text-gray-100">6</td>
-          <td class="p-4 font-mono text-right text-gray-100">2</td>
-          <td class="p-4 font-mono text-right text-gray-100">45.00</td>
-        </tr>
-        <tr class="bg-gray-800/10">
-          <td class="p-4 font-mono text-gray-300">#19022</td>
-          <td class="p-4 font-mono text-right text-gray-100">312</td>
-          <td class="p-4 font-mono text-right text-gray-100">1</td>
-          <td class="p-4 font-mono text-right text-gray-100">15.00</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="w-full border border-gray-700/70 rounded-lg overflow-hidden bg-gray-900/40 shadow-xl max-w-4xl mx-auto my-auto">
+  <table class="w-full text-left border-collapse">
+    <thead class="bg-gray-800 border-b border-gray-700">
+      <tr>
+        <th class="p-4 font-mono font-bold text-emerald-400">CustomerID</th>
+        <th class="p-4 font-mono font-bold text-emerald-400 text-right">Recency (Days)</th>
+        <th class="p-4 font-mono font-bold text-emerald-400 text-right">Frequency (Orders)</th>
+        <th class="p-4 font-mono font-bold text-emerald-400 text-right">Monetary Value ($)</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-800/60 text-base text-gray-300">
+      <tr>
+        <td class="p-4 font-mono">#14920</td>
+        <td class="p-4 font-mono text-right">3</td>
+        <td class="p-4 font-mono text-right">82</td>
+        <td class="p-4 font-mono text-right">14,250.00</td>
+      </tr>
+      <tr class="bg-gray-800/10">
+        <td class="p-4 font-mono">#12844</td>
+        <td class="p-4 font-mono text-right">12</td>
+        <td class="p-4 font-mono text-right">4</td>
+        <td class="p-4 font-mono text-right">120.50</td>
+      </tr>
+      <tr>
+        <td class="p-4 font-mono">#17391</td>
+        <td class="p-4 font-mono text-right">241</td>
+        <td class="p-4 font-mono text-right">1</td>
+        <td class="p-4 font-mono text-right">2,100.00</td>
+      </tr>
+      <tr class="bg-gray-800/10">
+        <td class="p-4 font-mono">#15002</td>
+        <td class="p-4 font-mono text-right">45</td>
+        <td class="p-4 font-mono text-right">18</td>
+        <td class="p-4 font-mono text-right">890.00</td>
+      </tr>
+      <tr>
+        <td class="p-4 font-mono">#16211</td>
+        <td class="p-4 font-mono text-right">6</td>
+        <td class="p-4 font-mono text-right">2</td>
+        <td class="p-4 font-mono text-right">45.00</td>
+      </tr>
+      <tr class="bg-gray-800/10">
+        <td class="p-4 font-mono">#19022</td>
+        <td class="p-4 font-mono text-right">312</td>
+        <td class="p-4 font-mono text-right">1</td>
+        <td class="p-4 font-mono text-right">15.00</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ---
 id: 4
-layout: default
+layout: tow-cols-header
 ---
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
 # <span class="pt-12 block">04. Machine Learning Approaches</span>
 
-<div class="flex flex-col justify-center items-center min-h-[60vh] px-8 text-center">
-  <div class="grid grid-cols-2 gap-16 w-full max-w-4xl">
-
-    <!-- Supervised Learning Column -->
-    <div class="bg-gray-800/30 p-8 rounded-xl border border-gray-700/50 flex flex-col items-center">
-      <div class="text-6xl mb-6 select-none">🏷️</div>
-      <h2 class="text-2xl font-bold text-blue-400 mb-4">Supervised</h2>
-      <div class="font-mono text-sm bg-gray-900/60 text-gray-400 p-3 rounded border border-gray-800 w-full mb-6">
-        Inputs &rarr; <span class="text-blue-400 font-bold">Known Labels</span>
-      </div>
-      <p class="text-gray-300 text-sm leading-relaxed">
-        The model learns a mapping function to predict predefined outcomes based on historical training targets.
-      </p>
-    </div>
-
-    <!-- Unsupervised Learning Column -->
-    <div class="bg-gray-800/30 p-8 rounded-xl border border-gray-700/50 flex flex-col items-center">
-      <div class="text-6xl mb-6 select-none">🔍</div>
-      <h2 class="text-2xl font-bold text-emerald-400 mb-4">Unsupervised</h2>
-      <div class="font-mono text-sm bg-gray-900/60 text-gray-400 p-3 rounded border border-gray-800 w-full mb-6">
-        Inputs &rarr; <span class="text-emerald-400 font-bold">Hidden Structures</span>
-      </div>
-      <p class="text-gray-300 text-sm leading-relaxed">
-        The model acts as an exploratory lens, mapping unlabeled feature spaces to discover natural clusters organically.
-      </p>
-    </div>
-
+::left::
+<div class="bg-gray-800/30 p-8 rounded-xl border border-gray-700/50 flex flex-col items-center text-center mx-4">
+  <div class="text-6xl mb-6 select-none">🏷️</div>
+  <h2 class="text-2xl font-bold text-blue-400 mb-4">Supervised</h2>
+  <div class="font-mono text-sm bg-gray-900/60 text-gray-400 p-3 rounded border border-gray-800 w-full mb-6">
+    Inputs &rarr; <span class="text-blue-400 font-bold">Known Labels</span>
   </div>
+  <p class="text-gray-300 text-sm leading-relaxed">
+    The model learns a mapping function to predict predefined outcomes based on historical training targets.
+  </p>
+</div>
+
+::right::
+<div class="bg-gray-800/30 p-8 rounded-xl border border-gray-700/50 flex flex-col items-center text-center mx-4">
+  <div class="text-6xl mb-6 select-none">🔍</div>
+  <h2 class="text-2xl font-bold text-emerald-400 mb-4">Unsupervised</h2>
+  <div class="font-mono text-sm bg-gray-900/60 text-gray-400 p-3 rounded border border-gray-800 w-full mb-6">
+    Inputs &rarr; <span class="text-emerald-400 font-bold">Hidden Structures</span>
+  </div>
+  <p class="text-gray-300 text-sm leading-relaxed">
+    The model acts as an exploratory lens, mapping unlabeled feature spaces to discover natural clusters organically.
+  </p>
 </div>
 
 ---
