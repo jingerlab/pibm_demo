@@ -147,46 +147,27 @@ id: 5
 
 # <span class="pt-12 block">05. Centroid-Based Partitioning: K-Means</span>
 
-<div class="grid grid-cols-2 gap-4 items-center min-h-[55vh] mt-4">
+<div class="grid grid-cols-2 gap-8 items-center min-h-[55vh] mt-4">
 
-  <!-- Left: Explanatory Context -->
+  <!-- Left Column: Simple presentation text -->
   <div class="space-y-4 px-4">
     <h3 class="text-xl font-semibold text-emerald-400">The Iterative Mechanics</h3>
     <p class="text-gray-300 text-sm leading-relaxed">
-      K-Means seeks to partition $N$ observations into $K$ clusters where each point belongs to the cluster with the nearest mean.
+      K-Means continuously partitions data by optimizing cluster center coordinates. Use the interactive slider below the figure to watch the mathematical convergence step-by-step.
     </p>
-    <div class="bg-gray-800/50 p-4 rounded border border-gray-700/60 font-mono text-xs text-gray-400">
-      <span class="text-emerald-400 block font-bold mb-1">&rarr; Step 1: Random Centroid Initialization</span>
-      <span v-click class="text-blue-400 block font-bold">&rarr; Step 2: Continuous Mean Re-calculation</span>
-    </div>
   </div>
 
-  <!-- Right: Dynamic Plotly Figures controlled by Slidev clicks -->
-  <div class="relative w-full flex justify-center items-center bg-gray-900/40 border border-gray-800 rounded-xl p-2 shadow-lg">
-    
-    <!-- Initial State: Step 1 Load -->
-    <div v-if="$slidev.nav.clicks === 0" class="w-full">
-      <PlotlyFigure
-        src="/charts/kmeans_step_1.json"
-        caption="Iterative Phase: Initial Random Assignment"
-        width="100%"
-        height="320px"
-        :fontSize="12"
-      />
-    </div>
-
-    <!-- Click State: Step 2 Convergence Load -->
-    <div v-else class="w-full">
-      <PlotlyFigure
-        src="/charts/kmeans_step_2.json"
-        caption="Iterative Phase: Stable Convergence Reached"
-        width="100%"
-        height="320px"
-        :fontSize="12"
-      />
-    </div>
-
+  <!-- Right Column: Single clean Plotly component -->
+  <div class="w-full bg-gray-900/40 border border-gray-800 rounded-xl p-4 shadow-lg">
+    <PlotlyFigure
+      src="/charts/kmeans.json"
+      caption="Figure 1: K-Means Convergence Path"
+      width="100%"
+      height="360px"
+      :fontSize="12"
+    />
   </div>
+
 </div>
 
 ---
@@ -199,7 +180,6 @@ id: 6
 <div class="flex flex-col justify-center items-center min-h-[55vh] px-8">
   <div class="grid grid-cols-3 gap-6 w-full max-w-5xl text-center">
 
-    <!-- Property 1 -->
     <div class="bg-gray-800/30 p-6 rounded-xl border border-gray-700/50 flex flex-col items-center">
       <div class="text-4xl mb-4 select-none">📐</div>
       <h3 class="text-lg font-bold text-emerald-400 mb-2">Geometric Assumptions</h3>
@@ -208,27 +188,24 @@ id: 6
       </p>
     </div>
 
-    <!-- Property 2 -->
     <div class="bg-gray-800/30 p-6 rounded-xl border border-gray-700/50 flex flex-col items-center">
       <div class="text-4xl mb-4 select-none">⚡</div>
       <h3 class="text-lg font-bold text-emerald-400 mb-2">Computational Speed</h3>
       <p class="text-gray-400 text-xs leading-relaxed">
-        Highly scalable with linear time complexity $O(I \cdot K \cdot N \cdot M)$. Excellent deployment candidate for large-scale corporate data streams.
+        Highly scalable with linear time complexity. Excellent deployment candidate for large-scale corporate data streams.
       </p>
     </div>
 
-    <!-- Property 3 -->
     <div class="bg-gray-800/30 p-6 rounded-xl border border-gray-700/50 flex flex-col items-center">
       <div class="text-4xl mb-4 select-none">⚠️</div>
       <h3 class="text-lg font-bold text-emerald-400 mb-2">Critical Pitfalls</h3>
       <p class="text-gray-400 text-xs leading-relaxed">
-        Extremely sensitive to outlier distortions and random seed initialization states. Requires defining the hyperparameter $K$ explicitly beforehand.
+        Extremely sensitive to outlier distortions and random seed initialization states. Requires defining the hyperparameter K explicitly beforehand.
       </p>
     </div>
 
   </div>
 </div>
-
 
 
 ---
