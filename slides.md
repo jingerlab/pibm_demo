@@ -1,8 +1,8 @@
 ---
 theme: default
-title: Data Analysis Using Python | Lists & Arrays
+title: Clustering Methodology | PIBM Demo
 info: |
-   ## Lecture 2 on Advanced Maths, Lists and Arrays
+   ## Demo Lecture on 
 class: text-center
 css: unocss
 drawings:
