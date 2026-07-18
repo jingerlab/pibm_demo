@@ -68,6 +68,109 @@ Modern enterprises are drowning in high-dimensional data, yet starving for actio
     *   **Solution:** Grouping products based on co-purchase histories to dynamically bundle items, optimizing both margins and supply chain allocation.
 
 
+---
+layout: default
+id: 3
+---
+
+# 03. Data Showcase & Preprocessing Blueprint
+## Raw E-Commerce Transactional Metrics (RFM Baseline Dataset)
+
+<div class="grid grid-cols-3 gap-4 mb-4">
+  <div class="bg-gray-800/50 p-3 rounded border border-gray-700">
+    <span class="text-xs text-gray-400 block uppercase font-mono">Dataset Scale</span>
+    <span class="text-xl font-bold text-emerald-400 font-mono">100,000+ Rows</span>
+  </div>
+  <div class="bg-gray-800/50 p-3 rounded border border-gray-700">
+    <span class="text-xs text-gray-400 block uppercase font-mono">Target Dimensions</span>
+    <span class="text-xl font-bold text-emerald-400 font-mono">3 Continuous Core Features</span>
+  </div>
+  <div class="bg-gray-800/50 p-3 rounded border border-gray-700">
+    <span class="text-xs text-gray-400 block uppercase font-mono">Preprocessing Goal</span>
+    <span class="text-xl font-bold text-emerald-400 font-mono">Z-Score Normalization</span>
+  </div>
+</div>
+
+<!-- Scrollable Table Container -->
+<div class="overflow-y-auto max-h-68 border border-gray-700 rounded shadow-inner custom-scrollbar">
+  <table class="w-full text-left text-sm border-collapse">
+    <thead class="bg-gray-800 sticky top-0 border-b border-gray-700">
+      <tr>
+        <th class="p-3 font-mono font-bold text-emerald-400">CustomerID</th>
+        <th class="p-3 font-mono font-bold text-emerald-400 text-right">Recency (Days)</th>
+        <th class="p-3 font-mono font-bold text-emerald-400 text-right">Frequency (Orders)</th>
+        <th class="p-3 font-mono font-bold text-emerald-400 text-right">Monetary Value ($)</th>
+        <th class="p-3 font-bold text-blue-400">Core Persona Intuition</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-800 bg-gray-900/40">
+      <tr>
+        <td class="p-3 font-mono text-gray-400">#14920</td>
+        <td class="p-3 font-mono text-right text-emerald-400">3</td>
+        <td class="p-3 font-mono text-right text-emerald-400">82</td>
+        <td class="p-3 font-mono text-right text-emerald-400">14,250.00</td>
+        <td class="p-3 text-xs text-gray-300">High-value, highly active corporate client.</td>
+      </tr>
+      <tr class="bg-gray-800/20">
+        <td class="p-3 font-mono text-gray-400">#12844</td>
+        <td class="p-3 font-mono text-right text-emerald-400">12</td>
+        <td class="p-3 font-mono text-right text-emerald-400">4</td>
+        <td class="p-3 font-mono text-right text-emerald-400">120.50</td>
+        <td class="p-3 text-xs text-gray-300">Frequent low-tier buyer, highly responsive to sales.</td>
+      </tr>
+      <tr>
+        <td class="p-3 font-mono text-gray-400">#17391</td>
+        <td class="p-3 font-mono text-right text-emerald-400">241</td>
+        <td class="p-3 font-mono text-right text-emerald-400">1</td>
+        <td class="p-3 font-mono text-right text-emerald-400">2,100.00</td>
+        <td class="p-3 text-xs text-gray-300">Lapsed wholesale buyer. High risk of complete churn.</td>
+      </tr>
+      <tr class="bg-gray-800/20">
+        <td class="p-3 font-mono text-gray-400">#15002</td>
+        <td class="p-3 font-mono text-right text-emerald-400">45</td>
+        <td class="p-3 font-mono text-right text-emerald-400">18</td>
+        <td class="p-3 font-mono text-right text-emerald-400">890.00</td>
+        <td class="p-3 text-xs text-gray-300">Standard consistent active consumer retail footprint.</td>
+      </tr>
+      <tr>
+        <td class="p-3 font-mono text-gray-400">#16211</td>
+        <td class="p-3 font-mono text-right text-emerald-400">6</td>
+        <td class="p-3 font-mono text-right text-emerald-400">2</td>
+        <td class="p-3 font-mono text-right text-emerald-400">45.00</td>
+        <td class="p-3 text-xs text-gray-300">New acquisition. Needs tracking for secondary purchase.</td>
+      </tr>
+      <tr class="bg-gray-800/20">
+        <td class="p-3 font-mono text-gray-400">#19022</td>
+        <td class="p-3 font-mono text-right text-emerald-400">312</td>
+        <td class="p-3 font-mono text-right text-emerald-400">1</td>
+        <td class="p-3 font-mono text-right text-emerald-400">15.00</td>
+        <td class="p-3 text-xs text-gray-300">One-time bargain browser. Low priority cohort.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<span class="text-xs text-gray-500 mt-2 block italic">
+  *Note for the Expert Panel: Notice the extreme unit variance. Without logarithmic scaling or standard Z-scoring, the distance metrics will completely collapse under the magnitude of the Monetary dimension.*
+</span>
+
+<style>
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(31, 41, 55, 0.5);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.4);
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.7);
+}
+</style>
+
+
 
 ---
 layout: center
