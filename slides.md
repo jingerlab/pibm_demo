@@ -192,6 +192,43 @@ id: 6
   </div>
 </div>
 
+---
+layout: default
+name: kmeans-interactive
+---
+
+# <span class="pt-12 block">05. Centroid-Based Partitioning: K-Means</span>
+
+<div class="grid grid-cols-2 gap-8 items-center min-h-[55vh] mt-4">
+
+  <!-- Left Side: Core Narrative -->
+  <div class="space-y-4 px-4">
+    <h3 class="text-xl font-semibold text-emerald-400">The Convergence Process</h3>
+    <p class="text-gray-300 text-sm leading-relaxed">
+      K-Means begins with a completely blind guess before optimization takes place. 
+    </p>
+    
+    <ul class="space-y-2 text-sm text-gray-400 list-disc pl-4">
+      <li><strong>Phase 1:</strong> Data points are completely unassigned (monochrome), and centroids are placed at random.</li>
+      <li><strong>Phase 2+:</strong> Expectations-Maximization loops color-code the boundaries and shift the centers to stable means.</li>
+    </ul>
+    
+    <div class="mt-4 p-3 bg-gray-800/40 rounded border border-gray-700/50 text-xs text-gray-400 italic">
+      👉 Use the interactive timeline slider under the graph to walk the panel through the real-time mathematical optimization steps.
+    </div>
+  </div>
+
+  <!-- Right Side: The Standalone Plotly Element -->
+  <PlotlyFigure
+    src="/charts/kmeans.json"
+    caption="Figure 1: Interactive K-Means Migration Path"
+    width="100%"
+    height="380px"
+    :fontSize="12"
+  />
+
+</div>
+
 
 ---
 layout: center
