@@ -31,8 +31,7 @@ toc: false
 </div>
 
 ---
-layout: two-cols
-class: text-center
+layout: two-cols-title
 id: 2
 ---
 
