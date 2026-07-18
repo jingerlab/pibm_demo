@@ -31,7 +31,7 @@ toc: false
 </div>
 
 ---
-layout: two-cols-title
+layout: two-cols-header
 id: 2
 ---
 
@@ -175,7 +175,7 @@ id: 3
 ---
 layout: center
 class: text-center
-id: 2
+id: 1
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="100" baseColor="#00ffff" />
