@@ -57,7 +57,7 @@ id: 3
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
-## <span class="pt-8 block">Data Showcase</span>
+# <span class="pt-12 block">Data Showcase</span>
 <div class="w-full border border-gray-700/70 rounded-lg overflow-hidden bg-gray-900/40 shadow-xl max-w-4xl mx-auto my-auto">
   <table class="w-full text-left border-collapse">
     <thead class="bg-gray-800 border-b border-gray-700">
@@ -112,34 +112,47 @@ id: 3
 ---
 id: 4
 layout: two-cols-header
+class: text-center
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
-# <span class="pt-8 block">04. Machine Learning Approaches</span>
+# <span class="pt-12 block">Machine Learning Approaches</span>
 
 ::left::
-<div class="bg-gray-800/30 p-8 rounded-xl border border-gray-700/50 flex flex-col items-center text-center mx-4">
-  <div class="text-6xl mb-6 select-none">🏷️</div>
-  <h2 class="text-2xl font-bold text-blue-400 mb-4">Supervised</h2>
-  <div class="font-mono text-sm bg-gray-900/60 text-gray-400 p-3 rounded border border-gray-800 w-full mb-6">
-    Inputs &rarr; <span class="text-blue-400 font-bold">Known Labels</span>
-  </div>
-  <p class="text-gray-300 text-sm leading-relaxed">
-    The model learns a mapping function to predict predefined outcomes based on historical training targets.
-  </p>
-</div>
+## Supervised Learning 
+
+```mermaid
+graph TD
+    %% Define Theme Style
+    classDef default fill:#1e1e2e,stroke:#313244,stroke-width:1px,color:#cdd6f4;
+    classDef highlight fill:#f38ba8,stroke:#f38ba8,stroke-width:2px,color:#11111b;
+    
+    A[📊 Raw Data + 🏷️ Labels] --> B(🤖 Model Training)
+    C[👨‍🏫 Teacher / Ground Truth] -->|Guides| B
+    B --> D[🔮 Predictive Output]
+    D --> E{🎯 Evaluation}
+    E -->|Error Feedback| B
+    
+    class C highlight;
+```
 
 ::right::
-<div class="bg-gray-800/30 p-8 rounded-xl border border-gray-700/50 flex flex-col items-center text-center mx-4">
-  <div class="text-6xl mb-6 select-none">🔍</div>
-  <h2 class="text-2xl font-bold text-emerald-400 mb-4">Unsupervised</h2>
-  <div class="font-mono text-sm bg-gray-900/60 text-gray-400 p-3 rounded border border-gray-800 w-full mb-6">
-    Inputs &rarr; <span class="text-emerald-400 font-bold">Hidden Structures</span>
-  </div>
-  <p class="text-gray-300 text-sm leading-relaxed">
-    The model acts as an exploratory lens, mapping unlabeled feature spaces to discover natural clusters organically.
-  </p>
-</div>
+## Unsupervised Learning
+```mermaid
+graph TD
+    %% Define Theme Style
+    classDef default fill:#1e1e2e,stroke:#313244,stroke-width:1px,color:#cdd6f4;
+    classDef discovery fill:#a6e3a1,stroke:#a6e3a1,stroke-width:2px,color:#11111b;
+    
+    X[📊 Raw Data Only] --> Y(🤖 Self-Organization)
+    Y --> Z{🧩 Hidden Patterns}
+    
+    Z --> Z1[🔴 Cluster Alpha]
+    Z --> Z2[🟢 Cluster Beta]
+    Z --> Z3[⚠️ Outliers/Noise]
+    
+    class Z discovery;
+```
 
 ---
 layout: default
