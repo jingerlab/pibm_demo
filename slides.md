@@ -111,18 +111,17 @@ id: 3
 
 ---
 id: 4
-layout: two-cols-header
+layout: center
 class: text-center
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
 # <span class="pt-12 block">Machine Learning Approaches</span>
 
-::left::
 ## Supervised Learning 
 
 ```mermaid
-graph TD
+graph LR
     %% Define Theme Style
     classDef default fill:#1e1e2e,stroke:#313244,stroke-width:1px,color:#cdd6f4;
     classDef highlight fill:#f38ba8,stroke:#f38ba8,stroke-width:2px,color:#11111b;
@@ -136,10 +135,19 @@ graph TD
     class C highlight;
 ```
 
-::right::
+
+---
+id: 5
+layout: center
+class: text-center
+---
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+# <span class="pt-12 block">Machine Learning Approaches</span>
+
 ## Unsupervised Learning
 ```mermaid
-graph TD
+graph LR
     %% Define Theme Style
     classDef default fill:#1e1e2e,stroke:#313244,stroke-width:1px,color:#cdd6f4;
     classDef discovery fill:#a6e3a1,stroke:#a6e3a1,stroke-width:2px,color:#11111b;
