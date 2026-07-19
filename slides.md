@@ -116,9 +116,8 @@ class: text-center
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
-# <span class="pt-6 block">Machine Learning Approaches</span>
+# <span class="pt-6 block">Machine Learning Approaches: Supervised Learning</span>
 
-## Supervised Learning 
 
 ```mermaid
 graph TD
@@ -129,7 +128,7 @@ graph TD
     A[📊 Raw Data + 🏷️ Labels] --> B(🤖 Model Training)
     C[👨‍🏫 Teacher / Ground Truth] -->|Guides| B
     B --> D[🔮 Predictive Output]
-    D --> E{🎯 Evaluation}
+    D --> E([🎯 Evaluation])
     E -->|Error Feedback| B
     
     class C highlight;
@@ -143,9 +142,8 @@ class: text-center
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
-# <span class="pt-6 block">Machine Learning Approaches</span>
+# <span class="pt-6 block">Machine Learning Approaches: Unsupervised Learning</span>
 
-## Unsupervised Learning
 ```mermaid
 graph TD
     %% Define Theme Style
@@ -153,7 +151,7 @@ graph TD
     classDef discovery fill:#a6e3a1,stroke:#a6e3a1,stroke-width:2px,color:#11111b;
     
     X[📊 Raw Data Only] --> Y(🤖 Self-Organization)
-    Y --> Z{🧩 Hidden Patterns}
+    Y --> Z([🧩 Hidden Patterns])
     
     Z --> Z1[🔴 Cluster Alpha]
     Z --> Z2[🟢 Cluster Beta]
@@ -165,15 +163,15 @@ graph TD
 ---
 layout: center
 class: text-center
-id: 6
+id: 7
 ---
 
 # <span class="pt-12 block">Centroid-Based Partitioning: K-Means</span>
 
 <PlotlyFigure
-  src="kmeans.json"
+  src="gmm.json"
   caption="Figure 1: Clustering into k Groups"
-  width="90%"
+  width="100%"
   height="320px"
   :fontSize="12"
 />
