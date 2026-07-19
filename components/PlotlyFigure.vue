@@ -1,55 +1,40 @@
 <script setup lang="ts">
-import { onMounted, ref, shallowRef, onBeforeUnmount } from "vue";
+import { onMounted, onBeforeUnmount, ref, watch, nextTick } from "vue";
 
-const props = defineProps<{
-  src: string; // Path to your json file
-  caption?: string;
-}>();
+const props = defineProps<{ src: string; caption?: string }>();
+const plotDiv = ref<HTMLElement | null>(null);
 
-const plotDiv = ref<HTMLElement>();
-const figure = shallowRef<any>(null);
-
-const initPlot = async () => {
-  if (!plotDiv.value) return;
+const render = async () => {
+  const Plotly = (window as any).Plotly;
+  if (!Plotly || !plotDiv.value) return;
 
   try {
-    const response = await fetch(props.src);
-    const data = await response.json();
-    figure.value = data;
-
-    // Use Plotly's global object
-    const Plotly = (window as any).Plotly;
-
-    // The magic happens here: passing the full JSON (data, layout, AND frames)
-    // to newPlot ensures that sliders and animation frames are linked.
-    await Plotly.newPlot(
-      plotDiv.value, 
-      data.data, 
-      data.layout, 
-      { 
-        responsive: true,
-        displayModeBar: true 
-      }
-    );
-
-    // If your JSON includes animations, register them
-    if (data.frames) {
-      await Plotly.addFrames(plotDiv.value, data.frames);
+    const res = await fetch(props.src);
+    const { data, layout, frames } = await res.json();
+    
+    // Purge any existing plot in this div to prevent overlaps
+    Plotly.purge(plotDiv.value);
+    
+    // Render the plot with frames and layout
+    await Plotly.newPlot(plotDiv.value, data, layout);
+    
+    // Explicitly add frames if they exist
+    if (frames) {
+      await Plotly.addFrames(plotDiv.value, frames);
     }
-  } catch (error) {
-    console.error("Plotly render error:", error);
+  } catch (e) {
+    console.error("Plotly render failed:", e);
   }
 };
 
-onMounted(initPlot);
-onBeforeUnmount(() => {
-  if (plotDiv.value) (window as any).Plotly.purge(plotDiv.value);
-});
+// Use nextTick to ensure Slidev has finished transitioning the slide
+onMounted(() => nextTick(render));
+onBeforeUnmount(() => plotDiv.value && (window as any).Plotly.purge(plotDiv.value));
 </script>
 
 <template>
-  <div class="plotly-wrapper">
+  <div class="w-full">
     <div ref="plotDiv" class="w-full h-96"></div>
-    <p v-if="caption" class="text-xs text-center mt-2">{{ caption }}</p>
+    <p v-if="caption" class="text-sm text-center mt-2">{{ caption }}</p>
   </div>
 </template>
