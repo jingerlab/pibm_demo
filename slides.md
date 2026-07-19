@@ -30,19 +30,20 @@ toc: false
 </div>
 
 ---
-layout: two-cols-header
+layout: center
+class: text-center
 id: 2
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
-# <span class="pt-12 block">02. The Business Problem</span>
+# <span class="pt-12 block">The Business Problem</span>
 
 <div class="flex flex-col justify-center items-center min-h-[55vh] px-8">
 
 <v-click>
   <div class="bg-gray-800/60 backdrop-blur-md px-12 py-8 rounded-xl border border-gray-700/80 shadow-2xl max-w-2xl text-center">
     <h2 class="text-3xl font-semibold text-emerald-400 leading-relaxed">
-      "How do we target different customers more efficiently?"
+      "How do we effectively cluster data about customers, logistics, sales, etc. effectively into categories that make sense to think about?"
     </h2>
   </div>
 </v-click>
@@ -50,12 +51,13 @@ id: 2
 </div>
 
 ---
-layout: default
+layout: center
+class: text-center
 id: 3
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
-# <span class="pt-12 block">03. Data Showcase</span>
+## <span class="pt-8 block">Data Showcase</span>
 <div class="w-full border border-gray-700/70 rounded-lg overflow-hidden bg-gray-900/40 shadow-xl max-w-4xl mx-auto my-auto">
   <table class="w-full text-left border-collapse">
     <thead class="bg-gray-800 border-b border-gray-700">
