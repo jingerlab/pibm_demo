@@ -116,7 +116,7 @@ class: text-center
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
-# <span class="pt-12 block">Machine Learning Approaches</span>
+# <span class="pt-6 block">Machine Learning Approaches</span>
 
 ## Supervised Learning 
 
@@ -143,7 +143,7 @@ class: text-center
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
-# <span class="pt-12 block">Machine Learning Approaches</span>
+# <span class="pt-6 block">Machine Learning Approaches</span>
 
 ## Unsupervised Learning
 ```mermaid
@@ -168,7 +168,7 @@ class: text-center
 id: 6
 ---
 
-# <span class="pt-12 block">Centroid-Based Partitioning: K-Means
+# <span class="pt-12 block">Centroid-Based Partitioning: K-Means</span>
 
 <PlotlyFigure
   src="kmeans.json"
