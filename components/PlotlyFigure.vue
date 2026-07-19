@@ -1,24 +1,25 @@
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount, ref, watch, nextTick } from "vue";
+import { onMounted, ref, nextTick, onBeforeUnmount } from "vue";
 
 const props = defineProps<{ src: string; caption?: string }>();
 const plotDiv = ref<HTMLElement | null>(null);
 
-const render = async () => {
-  const Plotly = (window as any).Plotly;
-  if (!Plotly || !plotDiv.value) return;
+// Create a reactive flag to check if we are in the browser
+const isClient = typeof window !== 'undefined';
+
+const initPlot = async () => {
+  // 1. Double check we are in the browser
+  if (!isClient || !plotDiv.value) return;
 
   try {
+    // 2. Import dynamically ONLY on the client
+    const Plotly = (await import('plotly.js-dist-min')).default;
+    
     const res = await fetch(props.src);
     const { data, layout, frames } = await res.json();
     
-    // Purge any existing plot in this div to prevent overlaps
-    Plotly.purge(plotDiv.value);
-    
-    // Render the plot with frames and layout
     await Plotly.newPlot(plotDiv.value, data, layout);
     
-    // Explicitly add frames if they exist
     if (frames) {
       await Plotly.addFrames(plotDiv.value, frames);
     }
@@ -27,14 +28,26 @@ const render = async () => {
   }
 };
 
-// Use nextTick to ensure Slidev has finished transitioning the slide
-onMounted(() => nextTick(render));
-onBeforeUnmount(() => plotDiv.value && (window as any).Plotly.purge(plotDiv.value));
+onMounted(() => {
+  // 3. Ensure this only runs once the component is mounted in the browser
+  nextTick(initPlot);
+});
+
+onBeforeUnmount(() => {
+  if (isClient && plotDiv.value) {
+    // We import dynamically again to purge
+    import('plotly.js-dist-min').then(P => P.default.purge(plotDiv.value!));
+  }
+});
 </script>
 
 <template>
   <div class="w-full">
-    <div ref="plotDiv" class="w-full h-96"></div>
+    <!-- Use v-if to ensure it doesn't try to render during SSR -->
+    <div v-if="isClient" ref="plotDiv" class="w-full h-96"></div>
+    <div v-else class="h-96 flex items-center justify-center border">
+      Loading Plot...
+    </div>
     <p v-if="caption" class="text-sm text-center mt-2">{{ caption }}</p>
   </div>
 </template>
