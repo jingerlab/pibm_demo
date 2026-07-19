@@ -121,7 +121,7 @@ class: text-center
 ## Supervised Learning 
 
 ```mermaid
-graph LR
+graph TD
     %% Define Theme Style
     classDef default fill:#1e1e2e,stroke:#313244,stroke-width:1px,color:#cdd6f4;
     classDef highlight fill:#f38ba8,stroke:#f38ba8,stroke-width:2px,color:#11111b;
@@ -147,7 +147,7 @@ class: text-center
 
 ## Unsupervised Learning
 ```mermaid
-graph LR
+graph TD
     %% Define Theme Style
     classDef default fill:#1e1e2e,stroke:#313244,stroke-width:1px,color:#cdd6f4;
     classDef discovery fill:#a6e3a1,stroke:#a6e3a1,stroke-width:2px,color:#11111b;
@@ -168,7 +168,7 @@ class: text-center
 id: 6
 ---
 
-# <span class="pt-12 block"> Centroid-Based Partitioning: K-Means
+# <span class="pt-12 block">Centroid-Based Partitioning: K-Means
 
 <PlotlyFigure
   src="kmeans.json"
