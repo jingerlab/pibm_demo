@@ -163,16 +163,17 @@ graph LR
 ```
 
 ---
-layout: default
-id: 5
+layout: center
+class: text-center
+id: 6
 ---
 
-# 05. Centroid-Based Partitioning: K-Means
+# <span class="pt-12 block"> Centroid-Based Partitioning: K-Means
 
 <PlotlyFigure
-  src="plot.json"
-  caption="Figure 1: Sample Figure"
-  width="100%"
+  src="kmeans.json"
+  caption="Figure 1: Clustering into k Groups"
+  width="90%"
   height="320px"
   :fontSize="12"
 />
