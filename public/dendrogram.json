@@ -1559,7 +1559,7 @@
     ],
     "layout": {
         "autosize": true,
-        "height": Infinity,
+        "height": null,
         "hovermode": "closest",
         "showlegend": false,
         "template": {
@@ -2387,7 +2387,7 @@
                 }
             }
         },
-        "width": Infinity,
+        "width": null,
         "xaxis": {
             "mirror": "allticks",
             "rangemode": "tozero",
