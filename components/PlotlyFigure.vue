@@ -108,7 +108,7 @@ onBeforeUnmount(() => {
       <div 
         ref="plotDiv" 
         class="w-full"
-        :style="isFullscreen ? 'height: calc(100vh - 100px);' : 'height: 420px;'"
+        :style="isFullscreen ? 'height: calc(100vh - 100px);' : 'height: 320px;'"
       ></div>
     </div>
     
