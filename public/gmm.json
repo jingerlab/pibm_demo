@@ -34977,16 +34977,22 @@
                 }
             }
         },
+        "margin": {
+            "b": 100
+        },
         "legend": {
             "traceorder": "normal",
             "orientation": "v",
             "yanchor": "top",
-            "y": 1,
-            "xanchor": "left",
-            "x": 1.02
+            "y": 0.98,
+            "xanchor": "right",
+            "x": 0.98,
+            "bgcolor": "rgba(20,20,20,0.7)",
+            "bordercolor": "rgba(255,255,255,0.1)",
+            "borderwidth": 1
         },
         "title": {
-            "text": "GMM: Heavy Overlap Market Segmentation (True Soft Boundaries)"
+            "text": "GMM: Heavy Overlap Market Segmentation"
         },
         "xaxis": {
             "title": {
@@ -34998,11 +35004,34 @@
                 "text": "Spend Amount ($k)"
             }
         },
+        "annotations": [
+            {
+                "align": "left",
+                "bgcolor": "rgba(20,20,20,0.8)",
+                "bordercolor": "rgba(255,255,255,0.1)",
+                "borderwidth": 1,
+                "font": {
+                    "color": "#00E5FF",
+                    "family": "monospace",
+                    "size": 13
+                },
+                "showarrow": false,
+                "text": "Confidence Cut: \u22650%<br>Active Profiles: 400 / 400",
+                "x": 0.02,
+                "xref": "paper",
+                "y": 0.05,
+                "yref": "paper"
+            }
+        ],
         "sliders": [
             {
                 "active": 0,
                 "currentvalue": {
                     "prefix": "Min Assignment Probability: "
+                },
+                "pad": {
+                    "b": 10,
+                    "t": 60
                 },
                 "steps": [
                     {
@@ -35014,7 +35043,8 @@
                                 "frame": {
                                     "duration": 0,
                                     "redraw": true
-                                }
+                                },
+                                "mode": "immediate"
                             }
                         ],
                         "label": "0.0",
@@ -35029,7 +35059,8 @@
                                 "frame": {
                                     "duration": 0,
                                     "redraw": true
-                                }
+                                },
+                                "mode": "immediate"
                             }
                         ],
                         "label": "0.4",
@@ -35044,7 +35075,8 @@
                                 "frame": {
                                     "duration": 0,
                                     "redraw": true
-                                }
+                                },
+                                "mode": "immediate"
                             }
                         ],
                         "label": "0.6",
@@ -35059,7 +35091,8 @@
                                 "frame": {
                                     "duration": 0,
                                     "redraw": true
-                                }
+                                },
+                                "mode": "immediate"
                             }
                         ],
                         "label": "0.8",
@@ -35074,7 +35107,8 @@
                                 "frame": {
                                     "duration": 0,
                                     "redraw": true
-                                }
+                                },
+                                "mode": "immediate"
                             }
                         ],
                         "label": "0.95",
@@ -37936,6 +37970,27 @@
                     "type": "scatter"
                 }
             ],
+            "layout": {
+                "annotations": [
+                    {
+                        "align": "left",
+                        "bgcolor": "rgba(20,20,20,0.8)",
+                        "bordercolor": "rgba(255,255,255,0.1)",
+                        "borderwidth": 1,
+                        "font": {
+                            "color": "#00E5FF",
+                            "family": "monospace",
+                            "size": 13
+                        },
+                        "showarrow": false,
+                        "text": "Confidence Cut: \u22650%<br>Active Profiles: 400 / 400",
+                        "x": 0.02,
+                        "xref": "paper",
+                        "y": 0.05,
+                        "yref": "paper"
+                    }
+                ]
+            },
             "name": "0.0",
             "traces": [
                 3,
@@ -40766,6 +40821,27 @@
                     "type": "scatter"
                 }
             ],
+            "layout": {
+                "annotations": [
+                    {
+                        "align": "left",
+                        "bgcolor": "rgba(20,20,20,0.8)",
+                        "bordercolor": "rgba(255,255,255,0.1)",
+                        "borderwidth": 1,
+                        "font": {
+                            "color": "#00E5FF",
+                            "family": "monospace",
+                            "size": 13
+                        },
+                        "showarrow": false,
+                        "text": "Confidence Cut: \u226540%<br>Active Profiles: 396 / 400",
+                        "x": 0.02,
+                        "xref": "paper",
+                        "y": 0.05,
+                        "yref": "paper"
+                    }
+                ]
+            },
             "name": "0.4",
             "traces": [
                 3,
@@ -42868,6 +42944,27 @@
                     "type": "scatter"
                 }
             ],
+            "layout": {
+                "annotations": [
+                    {
+                        "align": "left",
+                        "bgcolor": "rgba(20,20,20,0.8)",
+                        "bordercolor": "rgba(255,255,255,0.1)",
+                        "borderwidth": 1,
+                        "font": {
+                            "color": "#00E5FF",
+                            "family": "monospace",
+                            "size": 13
+                        },
+                        "showarrow": false,
+                        "text": "Confidence Cut: \u226560%<br>Active Profiles: 292 / 400",
+                        "x": 0.02,
+                        "xref": "paper",
+                        "y": 0.05,
+                        "yref": "paper"
+                    }
+                ]
+            },
             "name": "0.6",
             "traces": [
                 3,
@@ -44025,6 +44122,27 @@
                     "type": "scatter"
                 }
             ],
+            "layout": {
+                "annotations": [
+                    {
+                        "align": "left",
+                        "bgcolor": "rgba(20,20,20,0.8)",
+                        "bordercolor": "rgba(255,255,255,0.1)",
+                        "borderwidth": 1,
+                        "font": {
+                            "color": "#00E5FF",
+                            "family": "monospace",
+                            "size": 13
+                        },
+                        "showarrow": false,
+                        "text": "Confidence Cut: \u226580%<br>Active Profiles: 157 / 400",
+                        "x": 0.02,
+                        "xref": "paper",
+                        "y": 0.05,
+                        "yref": "paper"
+                    }
+                ]
+            },
             "name": "0.8",
             "traces": [
                 3,
@@ -44538,6 +44656,27 @@
                     "type": "scatter"
                 }
             ],
+            "layout": {
+                "annotations": [
+                    {
+                        "align": "left",
+                        "bgcolor": "rgba(20,20,20,0.8)",
+                        "bordercolor": "rgba(255,255,255,0.1)",
+                        "borderwidth": 1,
+                        "font": {
+                            "color": "#00E5FF",
+                            "family": "monospace",
+                            "size": 13
+                        },
+                        "showarrow": false,
+                        "text": "Confidence Cut: \u226595%<br>Active Profiles: 65 / 400",
+                        "x": 0.02,
+                        "xref": "paper",
+                        "y": 0.05,
+                        "yref": "paper"
+                    }
+                ]
+            },
             "name": "0.95",
             "traces": [
                 3,

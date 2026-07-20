@@ -148,7 +148,7 @@ class: text-center
 graph TD
     %% Define Theme Style
     classDef default fill:#1e1e2e,stroke:#313244,stroke-width:1px,color:#cdd6f4;
-    classDef discovery fill:#a6e3a1,stroke:#a6e3a1,stroke-width:2px,color:#11111b;
+    classDef discovery fill:#f38ba8,stroke:#a6e3a1,stroke-width:2px,color:#11111b;
     
     X[📊 Raw Data Only] --> Y(🤖 Self-Organization)
     Y --> Z([🧩 Hidden Patterns])
@@ -163,24 +163,27 @@ graph TD
 ---
 layout: center
 class: text-center
-id: 7
+id: 6
 ---
 
-# <span class="pt-12 block">Centroid-Based Partitioning: K-Means</span>
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+# <span class="pt-10 block">Centroid Based Partitioning: K-Means</span>
 
 <PlotlyFigure
-  src="gmm.json"
-  caption="Figure 1: Clustering into k Groups"
+  src="kmeans.json"
+  caption=""
   width="100%"
   height="320px"
   :fontSize="12"
 />
 
 ---
-layout: default
-name: kmeans-properties
+layout: center
+id: 7
 ---
 
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
 # 06. K-Means: Algorithmic Properties & Constraints
 
 ### 🧠 Core Mathematical Underpinnings
@@ -197,10 +200,87 @@ name: kmeans-properties
 * **Best Suited For:** Massive, structured transaction databases where computational speed is prioritized over geometric flexibility.
 * **Classic Use Case:** Rapid RFM (Recency, Frequency, Monetary) value bucketing for automated, high-velocity digital marketing engines.
 
+
 ---
 layout: center
 class: text-center
-id: 1
+id: 8
+---
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+# <span class="pt-10 block">Centroid Based Partitioning: K-Means</span>
+
+<PlotlyFigure
+  src="kmeans2.json"
+  caption=""
+  width="100%"
+  height="320px"
+  :fontSize="12"
+/>
+
+
+---
+layout: center
+class: text-center
+id: 9
+---
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+# <span class="pt-10 block">Heirarchy Based Partitioning: Dendrograms</span>
+
+<PlotlyFigure
+  src="dendogram.json"
+  caption=""
+  width="100%"
+  height="320px"
+  :fontSize="12"
+/>
+
+
+
+---
+layout: center
+class: text-center
+id: 10
+---
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+# <span class="pt-10 block">Probability Based Partitioning: GMM </span>
+
+<PlotlyFigure
+  src="gmm.json"
+  caption=""
+  width="100%"
+  height="320px"
+  :fontSize="12"
+/>
+
+
+---
+layout: center
+class: text-center
+id: 11
+---
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+# <span class="pt-10 block">Density Based Partitioning: DBSCAN</span>
+
+<PlotlyFigure
+  src="dbscan.json"
+  caption=""
+  width="100%"
+  height="320px"
+  :fontSize="12"
+/>
+
+
+
+
+
+---
+layout: center
+class: text-center
+id: 12
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="100" baseColor="#00ffff" />
