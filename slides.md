@@ -179,38 +179,75 @@ id: 6
 />
 
 ---
-layout: two-cols-header
+layout: center
+class: text-center
 id: 7
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
-# Properties of K-Means Clustering
+
+# The Mechanics of Centroid Partitioning
+How K-Means Translates Distance into Segments
+
+At its mathematical core, K-Means is a optimization problem that groups data by minimizing the variance within each cluster. 
+
+$$J = \sum_{j=1}^{K} \sum_{i=1}^{n} w_{ij} ||x_i - \mu_j||^2$$
 
 
-::left::
-* **High-Speed Operational Efficiency**  
-  Incredibly fast and computationally cheap. It scales effortlessly across massive datasets, making it the go-to tool for fast, baseline market exploration.
-* **Actionable Corporate Boundaries**  
-  Creates clean, non-overlapping customer portfolios. Because every customer is assigned to exactly one group, it is simple for marketing teams to execute targeted campaigns.
-* **Clear Baseline Metrics**  
-  Uses standard averages to define the "typical consumer" profile for each group, providing a clear benchmark for product managers.
+> **In plain English:** The algorithm randomly places cluster centers, assigns every customer to their nearest center, recalculates the average center based on those new members, and repeats the process until the customer buckets stop shifting.
 
-::right::
+---
+layout: center
+id: 8
+class: text-center
+---
 
-# Commercial Blindspots
-Where the Business Logic Fails
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+# Properties of K-Means
 
-* **Forced Consumer Profiling**  
-  Operates on "hard assignment." If a customer sits right on the fence between two segments, K-Means forces them into one, completely masking their mixed behavior.
-* **Vulnerability to Extreme Outliers**  
-  Because it relies strictly on averages, a few ultra-high-spend "whales" or system glitches will violently skew the profile of an entire segment.
-* **The Static Scale Challenge**  
-  The algorithm cannot organically discover how many segments exist. The management team must predefine the number of groups ($K$), requiring manual validation.
+<!-- ROW 1: THE PROS (Green Matrix) -->
+<div class="mb-6">
+  <div class="text-sm font-bold text-green-400 uppercase tracking-wider mb-2">🟢 Strategic Advantages</div>
+  <div class="grid grid-cols-3 gap-4">
+    <div class="bg-green-900 bg-opacity-20 border border-green-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🎯</div>
+      <div class="font-semibold text-green-200 text-sm">Clear Marketing Buckets</div>
+    </div>
+    <div class="bg-green-900 bg-opacity-20 border border-green-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">⚡</div>
+      <div class="font-semibold text-green-200 text-sm">Fast & Cheap Scaling</div>
+    </div>
+    <div class="bg-green-900 bg-opacity-20 border border-green-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">📍</div>
+      <div class="font-semibold text-green-200 text-sm">Optimal Center Logistics</div>
+    </div>
+  </div>
+</div>
+
+<!-- ROW 2: THE CONS (Red Matrix) -->
+<div>
+  <div class="text-sm font-bold text-red-400 uppercase tracking-wider mb-2">🔴 Operational Risks</div>
+  <div class="grid grid-cols-3 gap-4">
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">📦</div>
+      <div class="font-semibold text-red-200 text-sm">Forced Customer Boxes</div>
+    </div>
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🔮</div>
+      <div class="font-semibold text-red-200 text-sm">Rigid Spherical Bias</div>
+    </div>
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🎲</div>
+      <div class="font-semibold text-red-200 text-sm">Manual Cluster Guesswork</div>
+    </div>
+  </div>
+</div>
+
 
 ---
 layout: center
 class: text-center
-id: 8
+id: 9
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
@@ -228,7 +265,7 @@ id: 8
 ---
 layout: center
 class: text-center
-id: 9
+id: 10
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
@@ -242,12 +279,74 @@ id: 9
   :fontSize="12"
 />
 
+---
+layout: center
+class: text-center
+id: 11
+---
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+# The Mechanics of Agglomerative Clustering
+How the Tree Computes Proximity
+
+At its mathematical core, hierarchical clustering builds a bottom-up tree by calculating the distance between growing groups of data.
+
+$$d(u, v) = \sqrt{\frac{|v| + |s|}{|v| + |s| + |t|} d(v, s)^2 + \frac{|v| + |t|}{|v| + |s| + |t|} d(v, t)^2 - \frac{|v|}{|v| + |s| + |t|} d(s, t)^2}$$
+
+> **In plain English:** The algorithm starts by treating every customer as their own group. It repeatedly finds the two most similar groups, locks them together, and uses this formula to update the distance between the newly merged group and all others, repeating until everyone is joined into a single tree.
+
+---
+layout: center
+class: text-center
+id: 12
+---
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+# Properties of Dendrogram Clustering
+
+<!-- ROW 1: THE PROS (Green Matrix) -->
+<div class="mb-6">
+  <div class="text-sm font-bold text-green-400 uppercase tracking-wider mb-2">🟢 Strategic Advantages</div>
+  <div class="grid grid-cols-3 gap-4">
+    <div class="bg-green-900 bg-opacity-20 border border-green-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🌳</div>
+      <div class="font-semibold text-green-200 text-sm">Visual Hierarchy Tree</div>
+    </div>
+    <div class="bg-green-900 bg-opacity-20 border border-green-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">📐</div>
+      <div class="font-semibold text-green-200 text-sm">No Fixed K Guesswork</div>
+    </div>
+    <div class="bg-green-900 bg-opacity-20 border border-green-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🔗</div>
+      <div class="font-semibold text-green-200 text-sm">Flexible Linkage Math</div>
+    </div>
+  </div>
+</div>
+
+<!-- ROW 2: THE CONS (Red Matrix) -->
+<div>
+  <div class="text-sm font-bold text-red-400 uppercase tracking-wider mb-2">🔴 Operational Risks</div>
+  <div class="grid grid-cols-3 gap-4">
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🐢</div>
+      <div class="font-semibold text-red-200 text-sm">Slow Big Data Scaling</div>
+    </div>
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🔒</div>
+      <div class="font-semibold text-red-200 text-sm">Irreversible Merge Traps</div>
+    </div>
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">📉</div>
+      <div class="font-semibold text-red-200 text-sm">Outlier Sensitivity Distortion</div>
+    </div>
+  </div>
+</div>
 
 
 ---
 layout: center
 class: text-center
-id: 10
+id: 13
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
@@ -261,11 +360,75 @@ id: 10
   :fontSize="12"
 />
 
+---
+layout: center
+class: text-center
+id: 14
+---
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+
+# The Mechanics of Probability-Based Partitioning
+How GMM Translates Density into Soft Segments
+
+At its mathematical core, a Gaussian Mixture Model treats the market as a collection of multiple bell curves, calculating the exact probability that a customer belongs to each group.
+
+$$\ln p(X|\pi, \mu, \Sigma) = \sum_{i=1}^{N} \ln \left( \sum_{k=1}^{K} \pi_k \mathcal{N}(x_i | \mu_k, \Sigma_k) \right)$$
+
+> **In plain English:** Instead of forcing customers into hard boundaries, the algorithm assumes every segment has its own center, spread, and orientation. It calculates how likely each customer belongs to every group, giving you a percentage breakdown of their loyalty rather than forcing them into a single box.
 
 ---
 layout: center
 class: text-center
-id: 11
+id: 15
+---
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+# Properties of GMM Clustering
+
+<!-- ROW 1: THE PROS (Green Matrix) -->
+<div class="mb-6">
+  <div class="text-sm font-bold text-green-400 uppercase tracking-wider mb-2">🟢 Strategic Advantages</div>
+  <div class="grid grid-cols-3 gap-4">
+    <div class="bg-green-900 bg-opacity-20 border border-green-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🌊</div>
+      <div class="font-semibold text-green-200 text-sm">True Soft Boundaries</div>
+    </div>
+    <div class="bg-green-900 bg-opacity-20 border border-green-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">📐</div>
+      <div class="font-semibold text-green-200 text-sm">Flexible Elliptic Shapes</div>
+    </div>
+    <div class="bg-green-900 bg-opacity-20 border border-green-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">📊</div>
+      <div class="font-semibold text-green-200 text-sm">Clear Certainty Metrics</div>
+    </div>
+  </div>
+</div>
+
+<!-- ROW 2: THE CONS (Red Matrix) -->
+<div>
+  <div class="text-sm font-bold text-red-400 uppercase tracking-wider mb-2">🔴 Operational Risks</div>
+  <div class="grid grid-cols-3 gap-4">
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">💥</div>
+      <div class="font-semibold text-red-200 text-sm">Math Singularity Crashes</div>
+    </div>
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🐢</div>
+      <div class="font-semibold text-red-200 text-sm">Slow Complex Runs</div>
+    </div>
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🧩</div>
+      <div class="font-semibold text-red-200 text-sm">Tricky Overfitting Traps</div>
+    </div>
+  </div>
+</div>
+
+
+---
+layout: center
+class: text-center
+id: 16
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
@@ -280,13 +443,249 @@ id: 11
 />
 
 
+---
+layout: center
+class: text-center
+id: 17
+---
 
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+# The Mechanics of Density-Based Clustering
+How DBSCAN Translates Proximity into Organic Shapes
+
+At its mathematical core, DBSCAN groups data by tracking zones of high point density, identifying clusters as continuous regions where neighbors sit tightly packed together.
+
+$$N_\epsilon(x) = \{y \in X \mid \text{dist}(x, y) \le \epsilon\} \quad \text{subject to} \quad |N_\epsilon(x)| \ge \text{MinPts}$$
+
+> **In plain English:** Instead of looking for centers or drawing clean circles, the algorithm walks point-by-point through your data. If a customer has enough close neighbors within a set distance, it starts a cluster; it then hops to those neighbors to expand the group, organically discovering any irregular shape while leaving isolated anomalies completely unclustered as noise.
+
+---
+layout: center
+class: text-center
+id: 18
+---
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+# Properties of DBSCAN Clustering
+
+<!-- ROW 1: THE PROS (Green Matrix) -->
+<div class="mb-6">
+  <div class="text-sm font-bold text-green-400 uppercase tracking-wider mb-2">🟢 Strategic Advantages</div>
+  <div class="grid grid-cols-3 gap-4">
+    <div class="bg-green-900 bg-opacity-20 border border-green-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🌊</div>
+      <div class="font-semibold text-green-200 text-sm">Arbitrary Shape Discovery</div>
+    </div>
+    <div class="bg-green-900 bg-opacity-20 border border-green-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🚨</div>
+      <div class="font-semibold text-green-200 text-sm">Built-in Outlier Filtering</div>
+    </div>
+    <div class="bg-green-900 bg-opacity-20 border border-green-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🌱</div>
+      <div class="font-semibold text-green-200 text-sm">No Prior K Clusters Required</div>
+    </div>
+  </div>
+</div>
+
+<!-- ROW 2: THE CONS (Red Matrix) -->
+<div>
+  <div class="text-sm font-bold text-red-400 uppercase tracking-wider mb-2">🔴 Operational Risks</div>
+  <div class="grid grid-cols-3 gap-4">
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🏔️</div>
+      <div class="font-semibold text-red-200 text-sm">Fails on Varying Densities</div>
+    </div>
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">🌀</div>
+      <div class="font-semibold text-red-200 text-sm">Highly Sensitive Parameters</div>
+    </div>
+    <div class="bg-red-900 bg-opacity-20 border border-red-500 border-opacity-30 rounded-lg p-4 text-center shadow-sm">
+      <div class="text-2xl mb-1">📉</div>
+      <div class="font-semibold text-red-200 text-sm">High-Dimensional Scale Trap</div>
+    </div>
+  </div>
+</div>
+
+---
+layout: center
+id: 19
+---
+
+<script setup lang="ts">
+import { ref } from 'vue'
+const sel = ref<number | null>(null)
+</script>
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+<div class="max-w-2xl mx-auto">
+  <h2 class="text-xl font-bold mb-1">Concept Check 1: Algorithm Selection</h2>
+  <p class="text-xs text-gray-400 mb-4">An e-commerce firm's natural customer groups form highly irregular, nested crescent shapes. Which algorithm is best suited to discover these segments?</p>
+
+  <div class="grid grid-cols-2 gap-2 my-3 text-xs">
+    <button @click="sel = 1" :class="[sel === 1 ? 'bg-red-900/30 border-red-500 text-red-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 1 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between">
+      <span>A) K-Means Clustering</span>
+      <span v-if="sel === 1">❌</span>
+    </button>
+    <button @click="sel = 2" :class="[sel === 2 ? 'bg-red-900/30 border-red-500 text-red-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 2 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between">
+      <span>B) Gaussian Mixture Models (GMM)</span>
+      <span v-if="sel === 2">❌</span>
+    </button>
+    <button @click="sel = 3" :class="[sel === 3 ? 'bg-green-900/30 border-green-500 text-green-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 3 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between col-span-2">
+      <span>C) DBSCAN</span>
+      <span v-if="sel !== null">🎯 Correct</span>
+    </button>
+  </div>
+
+  <div v-if="sel !== null" :class="sel === 3 ? 'bg-green-900/20 border-green-800/60 text-green-300' : 'bg-red-900/20 border-red-800/60 text-red-300'" class="p-3 border rounded text-xs leading-relaxed">
+    <span class="font-bold text-white">{{ sel === 3 ? '🎯 Correct!' : '❌ Review:' }}</span> DBSCAN groups data based on continuous density links rather than rigid shapes, making it perfect for nested crescents. K-Means and GMM assume convex or elliptical shapes.
+  </div>
+</div>
+
+---
+layout: center
+id: 20
+---
+
+<script setup lang="ts">
+import { ref } from 'vue'
+const sel = ref<number | null>(null)
+</script>
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+<div class="max-w-2xl mx-auto">
+  <h2 class="text-xl font-bold mb-1">Concept Check 2: Soft vs. Hard Boundaries</h2>
+  <p class="text-xs text-gray-400 mb-4">Instead of forcing a user into a single definitive profile, a system must report a fractional percentage breakdown of their loyalty. Which approach applies?</p>
+
+  <div class="grid grid-cols-2 gap-2 my-3 text-xs">
+    <button @click="sel = 1" :class="[sel === 1 ? 'bg-red-900/30 border-red-500 text-red-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 1 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between">
+      <span>A) Agglomerative Hierarchical</span>
+      <span v-if="sel === 1">❌</span>
+    </button>
+    <button @click="sel = 2" :class="[sel === 2 ? 'bg-green-900/30 border-green-500 text-green-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 2 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between">
+      <span>B) Gaussian Mixture Models (GMM)</span>
+      <span v-if="sel !== null">🎯 Correct</span>
+    </button>
+    <button @click="sel = 3" :class="[sel === 3 ? 'bg-red-900/30 border-red-500 text-red-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 3 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between col-span-2">
+      <span>C) K-Means Clustering</span>
+      <span v-if="sel === 3">❌</span>
+    </button>
+  </div>
+
+  <div v-if="sel !== null" :class="sel === 2 ? 'bg-green-900/20 border-green-800/60 text-green-300' : 'bg-red-900/20 border-red-800/60 text-red-300'" class="p-3 border rounded text-xs leading-relaxed">
+    <span class="font-bold text-white">{{ sel === 2 ? '🎯 Correct!' : '❌ Review:' }}</span> GMM assigns probabilities over all clusters per data point ("soft clustering"). K-Means and Hierarchical impose definitive, binary assignments ("hard clustering").
+  </div>
+</div>
+
+---
+layout: center
+id: 21
+---
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+<script setup lang="ts">
+import { ref } from 'vue'
+const sel = ref<number | null>(null)
+</script>
+
+<div class="max-w-2xl mx-auto">
+  <h2 class="text-xl font-bold mb-1">Concept Check 3: Scaling Bottlenecks</h2>
+  <p class="text-xs text-gray-400 mb-4">You are processing a massive database containing 15 million records. Which algorithm introduces a severe bottleneck due to an $O(N^2)$ computational complexity profile?</p>
+
+  <div class="grid grid-cols-2 gap-2 my-3 text-xs">
+    <button @click="sel = 1" :class="[sel === 1 ? 'bg-green-900/30 border-green-500 text-green-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 1 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between col-span-2">
+      <span>A) Hierarchical Clustering (Ward's)</span>
+      <span v-if="sel !== null">🎯 Correct</span>
+    </button>
+    <button @click="sel = 2" :class="[sel === 2 ? 'bg-red-900/30 border-red-500 text-red-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 2 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between">
+      <span>B) K-Means Clustering</span>
+      <span v-if="sel === 2">❌</span>
+    </button>
+    <button @click="sel = 3" :class="[sel === 3 ? 'bg-red-900/30 border-red-500 text-red-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 3 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between">
+      <span>C) Mini-Batch K-Means</span>
+      <span v-if="sel === 3">❌</span>
+    </button>
+  </div>
+
+  <div v-if="sel !== null" :class="sel === 1 ? 'bg-green-900/20 border-green-800/60 text-green-300' : 'bg-red-900/20 border-red-800/60 text-red-300'" class="p-3 border rounded text-xs leading-relaxed">
+    <span class="font-bold text-white">{{ sel === 1 ? '🎯 Correct!' : '❌ Review:' }}</span> Hierarchical clustering requires calculating and holding an explicit $N \times N$ proximity matrix, making large-scale deployment mathematically expensive.
+  </div>
+</div>
+
+---
+layout: center
+id: 22
+---
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+<script setup lang="ts">
+import { ref } from 'vue'
+const sel = ref<number | null>(null)
+</script>
+
+<div class="max-w-2xl mx-auto">
+  <h2 class="text-xl font-bold mb-1">Concept Check 4: Outlier Anomalies</h2>
+  <p class="text-xs text-gray-400 mb-4">Your customer data contains highly volatile transaction spikes. You need to identify core trends without letting outliers pull or distort the group centers. What is the safest choice?</p>
+
+  <div class="grid grid-cols-2 gap-2 my-3 text-xs">
+    <button @click="sel = 1" :class="[sel === 1 ? 'bg-red-900/30 border-red-500 text-red-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 1 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between">
+      <span>A) K-Means Clustering</span>
+      <span v-if="sel === 1">❌</span>
+    </button>
+    <button @click="sel = 2" :class="[sel === 2 ? 'bg-green-900/30 border-green-500 text-green-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 2 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between">
+      <span>B) DBSCAN</span>
+      <span v-if="sel !== null">🎯 Correct</span>
+    </button>
+    <button @click="sel = 3" :class="[sel === 3 ? 'bg-red-900/30 border-red-500 text-red-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 3 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between col-span-2">
+      <span>C) Standard Ward's Hierarchical Tree</span>
+      <span v-if="sel === 3">❌</span>
+    </button>
+  </div>
+
+  <div v-if="sel !== null" :class="sel === 2 ? 'bg-green-900/20 border-green-800/60 text-green-300' : 'bg-red-900/20 border-red-800/60 text-red-300'" class="p-3 border rounded text-xs leading-relaxed">
+    <span class="font-bold text-white">{{ sel === 2 ? '🎯 Correct!' : '❌ Review:' }}</span> DBSCAN classifies any data point lacking a minimum number of close neighbors strictly as noise (-1). K-Means and standard trees lack a noise buffer and force outliers into group averages.
+  </div>
+</div>
+
+---
+layout: center
+id: 23
+---
+
+<MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
+<script setup lang="ts">
+import { ref } from 'vue'
+const sel = ref<number | null>(null)
+</script>
+
+<div class="max-w-2xl mx-auto">
+  <h2 class="text-xl font-bold mb-1">Concept Check 5: Linkage Optimization</h2>
+  <p class="text-xs text-gray-400 mb-4">During hierarchical clustering, you observe stringy, chain-like clusters. Which linkage criterion is causing this error?</p>
+
+  <div class="grid grid-cols-2 gap-2 my-3 text-xs">
+    <button @click="sel = 1" :class="[sel === 1 ? 'bg-green-900/30 border-green-500 text-green-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 1 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between col-span-2">
+      <span>A) Single Linkage (Min Distance)</span>
+      <span v-if="sel !== null">🎯 Correct</span>
+    </button>
+    <button @click="sel = 2" :class="[sel === 2 ? 'bg-red-900/30 border-red-500 text-red-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 2 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between">
+      <span>B) Complete Linkage (Max Distance)</span>
+      <span v-if="sel === 2">❌</span>
+    </button>
+    <button @click="sel = 3" :class="[sel === 3 ? 'bg-red-900/30 border-red-500 text-red-200' : 'bg-gray-900 border-gray-800 text-gray-400', sel !== null && sel !== 3 ? 'opacity-30' : '']" class="p-2 text-left border rounded cursor-pointer flex justify-between">
+      <span>C) Ward's Variance Linkage</span>
+      <span v-if="sel === 3">❌</span>
+    </button>
+  </div>
+
+  <div v-if="sel !== null" :class="sel === 1 ? 'bg-green-900/20 border-green-800/60 text-green-300' : 'bg-red-900/20 border-red-800/60 text-red-300'" class="p-3 border rounded text-xs leading-relaxed">
+    <span class="font-bold text-white">{{ sel === 1 ? '🎯 Correct!' : '❌ Review:' }}</span> Single Linkage relies on the minimum distance between points of separate clusters. This generates the "chaining effect," pulling clusters together along loose, single-element paths rather than variance groups.
+  </div>
+</div>
 
 
 ---
 layout: center
 class: text-center
-id: 12
+id: 24
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="100" baseColor="#00ffff" />
