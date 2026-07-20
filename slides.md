@@ -175,7 +175,7 @@ id: 6
   caption=""
   width="100%"
   height="320px"
-  :fontSize="8"
+  :fontSize="12"
 />
 
 ---
@@ -215,7 +215,7 @@ id: 8
   caption=""
   width="100%"
   height="320px"
-  :fontSize="8"
+  :fontSize="12"
 />
 
 
@@ -233,7 +233,7 @@ id: 9
   caption=""
   width="100%"
   height="320px"
-  :fontSize="8"
+  :fontSize="12"
 />
 
 
