@@ -2,7 +2,7 @@
 theme: default
 title: Clustering Methodology | PIBM Demo
 info: |
-   ## Demo Lecture on 
+   ## Demo Lecture on Clustering Methodology
 class: text-center
 css: unocss
 drawings:
