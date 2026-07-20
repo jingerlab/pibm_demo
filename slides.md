@@ -214,7 +214,7 @@ id: 8
   src="kmeans2.json"
   caption=""
   width="100%"
-  height="320px"
+  height="100%"
   :fontSize="12"
 />
 
