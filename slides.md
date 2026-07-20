@@ -214,7 +214,7 @@ id: 8
   src="kmeans2.json"
   caption=""
   width="100%"
-  height="100%"
+  height="1080px"
   :fontSize="8"
 />
 
@@ -232,7 +232,7 @@ id: 9
   src="dendogram.json"
   caption=""
   width="100%"
-  height="100%"
+  height="800px"
   :fontSize="8"
 />
 
@@ -251,7 +251,7 @@ id: 10
   src="gmm.json"
   caption=""
   width="100%"
-  height="320px"
+  height="600px"
   :fontSize="12"
 />
 
@@ -269,7 +269,7 @@ id: 11
   src="dbscan.json"
   caption=""
   width="100%"
-  height="320px"
+  height="700px"
   :fontSize="12"
 />
 
