@@ -179,27 +179,33 @@ id: 6
 />
 
 ---
-layout: center
+layout: two-cols-header
 id: 7
 ---
 
 <MathFrame v-if="$slidev.nav.currentPage === $frontmatter.id" :speed="0.003" :thickness="60" baseColor="#00ffff" />
-# 06. K-Means: Algorithmic Properties & Constraints
+# Properties of K-Means Clustering
 
-### 🧠 Core Mathematical Underpinnings
-* **Distance Dependency:** Relies heavily on Euclidean distance metrics; features with larger absolute scales will disproportionately dominate cluster assignments.
-* **Objective Function:** Iteratively minimizes the Within-Cluster Sum of Squares (WCSS) or inertia, finding local rather than global minima.
-* **Time Complexity:** Highly efficient linear scale of $\mathcal{O}(n \cdot k \cdot i)$ where $n$ is data points, $k$ is clusters, and $i$ is iterations.
 
-### ⚠️ Structural Limitations & Assumptions
-* **Spherical Bias:** Natively assumes clusters are isotropic (spherical, convex, and of similar sizes). It completely fails on complex topologies like concentric circles or interlocking rings.
-* **Initialization Sensitivity:** Poor initial random placement can lead to suboptimal local optima layouts (mitigated in production via `K-Means++`).
-* **Outlier Vulnerability:** A single extreme data point dramatically skews the mean calculation, distorting the final centroid location.
+::left::
+* **High-Speed Operational Efficiency**  
+  Incredibly fast and computationally cheap. It scales effortlessly across massive datasets, making it the go-to tool for fast, baseline market exploration.
+* **Actionable Corporate Boundaries**  
+  Creates clean, non-overlapping customer portfolios. Because every customer is assigned to exactly one group, it is simple for marketing teams to execute targeted campaigns.
+* **Clear Baseline Metrics**  
+  Uses standard averages to define the "typical consumer" profile for each group, providing a clear benchmark for product managers.
 
-### 💼 MBA Strategic Takeaway
-* **Best Suited For:** Massive, structured transaction databases where computational speed is prioritized over geometric flexibility.
-* **Classic Use Case:** Rapid RFM (Recency, Frequency, Monetary) value bucketing for automated, high-velocity digital marketing engines.
+::right::
 
+# Commercial Blindspots
+Where the Business Logic Fails
+
+* **Forced Consumer Profiling**  
+  Operates on "hard assignment." If a customer sits right on the fence between two segments, K-Means forces them into one, completely masking their mixed behavior.
+* **Vulnerability to Extreme Outliers**  
+  Because it relies strictly on averages, a few ultra-high-spend "whales" or system glitches will violently skew the profile of an entire segment.
+* **The Static Scale Challenge**  
+  The algorithm cannot organically discover how many segments exist. The management team must predefine the number of groups ($K$), requiring manual validation.
 
 ---
 layout: center
