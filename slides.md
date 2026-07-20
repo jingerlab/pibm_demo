@@ -175,7 +175,7 @@ id: 6
   caption=""
   width="100%"
   height="320px"
-  :fontSize="12"
+  :fontSize="8"
 />
 
 ---
@@ -214,7 +214,7 @@ id: 8
   src="kmeans2.json"
   caption=""
   width="100%"
-  height="1080px"
+  height="320px"
   :fontSize="8"
 />
 
@@ -229,10 +229,10 @@ id: 9
 # <span class="pt-10 block">Heirarchy Based Partitioning: Dendrograms</span>
 
 <PlotlyFigure
-  src="dendogram.json"
+  src="dendrogram.json"
   caption=""
   width="100%"
-  height="800px"
+  height="320px"
   :fontSize="8"
 />
 
@@ -251,7 +251,7 @@ id: 10
   src="gmm.json"
   caption=""
   width="100%"
-  height="600px"
+  height="320px"
   :fontSize="12"
 />
 
@@ -269,7 +269,7 @@ id: 11
   src="dbscan.json"
   caption=""
   width="100%"
-  height="700px"
+  height="320px"
   :fontSize="12"
 />
 
