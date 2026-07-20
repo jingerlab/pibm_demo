@@ -215,7 +215,7 @@ id: 8
   caption=""
   width="100%"
   height="100%"
-  :fontSize="12"
+  :fontSize="8"
 />
 
 
@@ -232,8 +232,8 @@ id: 9
   src="dendogram.json"
   caption=""
   width="100%"
-  height="320px"
-  :fontSize="12"
+  height="100%"
+  :fontSize="8"
 />
 
 
